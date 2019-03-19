@@ -17,6 +17,8 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
+% \usepackage{biblatex}
+
 % general settings
 \hypersetup{
 	linktocpage=true,
@@ -43,6 +45,8 @@
 % settings for code
 \renewcommand{\algorithmicrequire}{\textbf{Entrada: }}
 \renewcommand{\algorithmicensure}{\textbf{Salida: }}
+
+% \addbibresource{referencias.bib}
 
 %%%%%%%%%%%%
 % DOCUMENT %
@@ -96,8 +100,14 @@
 \input{./introduction/1_introduccion.tex}
 
 % bibliografia
-\addcontentsline{toc}{chapter}{Bibliografía}
+\addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{plain}
 \bibliography{referencias}
+\nocite{*}
+
+% \input{extra_refs.tex}
+
+% \printbibliography[Title=References, subtype=online]
+% \printbibliography[title=Referemces]
 
 \end{document}
