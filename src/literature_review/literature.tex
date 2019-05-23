@@ -23,9 +23,27 @@ GSEA is an analytical method that allows the researchers to focus on gene sets i
 Thanks to that, it enables the detection of biological processes like metabolic pathways, transcriptional programs or stress responses. 
 Apart from being a statistical analysis method, it also provides a software package and a database composed by more than 1000 gene sets that facilitates its usage and experimentation.
 
+Although the intention of this text is not to provide an exhaustive explanation of how GSEA works, it is important to offer a minimum introduction to the method, to be able to understand better the way how Machine Learning can improve it.
+
+A basic schema about how GSEA works is described in the following figure:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{../figs/GSEA_schema.png}
+    \caption{GSEA Schema.}
+    \label{fig:gsea-sch}
+\end{figure}
+
+GSEA receives two inputs, a molecular profile data and a Gene Set Database. Using this two inputs, GSEA will calculate an Enrichment Score (ES) between phenotypes for each gene contained in the molecular profile.
+Thanks to this ES, GSEA will be able to identify which set of genes offers statistical significance and will make possible the identification of biological processes.
+
+Due to the big amount of data, in terms of genes, that this kind of analysis can face, it is really important to make a good selection of them beforehand. This is one of the situations where Machine Learning is able to help, providing Feature Selection algorithms that can optimize the genes selected to be passed as an input to the GSEA method.
+
+
 In relation with that methodology, it is also interesting to remark the importance of choosing a proper metric for the ranking of genes, as shown in the work carried out by Zyla et al.\cite{Zyla2017}.
 
 All the above concepts have acted as a foundation to trigger the main ideas behind the objectives of the project presented here.
+ 
 
 \subsection{Similar Work}
 
@@ -38,7 +56,7 @@ Another similar interesting work is found in the study elaborated by Park et al.
 
 \subsection{Ongoing and Future Projects}
 
-Several studies\cite{Inamdar2016}\cite{Steiner2018}\cite{Schieber2018}\cite{Dreyling2016} agree on the necessity of the development of more personalized (patient-centric) treatments. Such treatments will be possible through an evaluation of each patient unique set of genomic complications. But before this point will be reached, new biomarkers and pathways that will enhance the understanding of MCL need to be discovered. This is an active area of study and it is also one of the purposes of the work presented here.
+Several studies\cite{Inamdar2016}\cite{Steiner2018}\cite{Schieber2018}\cite{Dreyling2016} agree on the necessity of the development of more personalized (patient-centric) treatments. Such treatments will be possible through an evaluation of each patient unique set of genomic complications and will result in more accurate treatments that will be highly effective and will not over-treat the patient. Is also important to comment that together with personalized treatments, more reliable predictive tools to improve the prognostic of each patient need to be developed, but before this point will be reached, new biomarkers and pathways that will enhance the understanding of MCL need to be discovered. This is an active area of study and it is also one of the purposes of the work presented here.
 
 Apart from the ongoing studies on MCL, it is worth to mention that the field of Artificial Intelligence continues its expansion. Every day, new studies, methods and developments are performed. As a consequence, more fields are adopting artificial intelligence approaches to improve their results. Of course, medical research is also profiting from all the consequent research and development.
 This Artificial Intelligence explosion has the potential to change drastically the way a scientific research will be done in the future, as a small example of it, new ways of knowledge discovery (cognitive discovery) are studied and developed, combining different areas of Artificial Intelligence like Knowledge Graphs, Natural Language Processing, Semantic Search, etc. The products obtained from that work will help the future researchers to find remarkable literature during the literature review that takes place at the starting phase of a scientific research.\cite{Raymond2019}
