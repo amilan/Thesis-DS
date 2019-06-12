@@ -1,3 +1,4 @@
+\onehalfspacing
 % \chapter{Introduction}
 % \label{chapter:introduction}
 
@@ -6,22 +7,29 @@
 
 Leukemia is a set of tumor processes that causes an uncontrolled increase in leukocytes (white blood cells) in the blood or lymphatic organs.
 
-Cyclin D1 is an oncogene frequently overexpressed in cancer, especially in Leukemia.
+Cyclin D1 is an oncogene frequently overexpressed in cancer, especially in leukemia.
 It is known that Cyclin D1 is one of the main regulators of the cell cycle, but its role as a regulator of transcription (the process that generates the proteins needed to control all cellular processes) remains unknown.
 
-It is also well-known that Cyclin D1 binds to the promoter regions of many genes, although the result of its transcriptional activity remains unknown as well. That transcriptional activity is believed to be fundamental in the development of Leukemia.
+It is also well-known that Cyclin D1 binds to the promoter regions of many genes, although the result of its transcriptional activity remains unknown as well. That transcriptional activity is believed to be fundamental in the development of leukemia.
 
-Recent studies of global transcriptional analysis have generated an enormous amount of data susceptible to be analyzed by data mining and machine learning techniques, being its interpretation fundamental to know the basic mechanisms of the cells that can lead to Leukemia.
+After the creation of the Gene Expression Omnibus repository\cite{Clough2016}\cite{Barrett2013} an enormous amount of genomics data is publicly available for its study. Among others, data related to leukemia is available and susceptible to be analyzed by Data Mining and Machine Learning techniques, being its interpretation fundamental to know the basic mechanisms of the cells that can lead to leukemia.
 Obviously, the generation of new drugs will depend on knowing these processes in detail.
 
 In human cells, both metabolic activities and environmental factors, such as UV rays or radioactivity, can cause DNA damage. Many of these lesions produce potentially harmful mutations in the genome of the cell, which affects the survival of their descendant cells at the time of mitosis or induces malignant processes that end up leading to a tumor.
 
 Several human cancers have been linked to DNA abnormalities such as dislocations, deletions and mutations. The clarification of the mechanisms that initiate the process of repairing DNA damage (DNA-damage response or DDR) will lead to improve the prediction of cancer risk and the treatment in the early stages. More extensive studies of the damage and DNA repair pathways could lead to the development of new therapies aimed at strengthening the natural defense systems of the cells that prevent a tumor from being developed.
 
-Within Leukemia, Mantle Cell Lymphoma (MCL) has the worst prognosis due to the fact that the survival average of patients is close to three years. Identified in the 1990s, it is a difficult disease to diagnose and rarely considered cured. The research to find biomarkers to improve its diagnosis is actively pursued all over the world. This tumor is characterized by the overexpression of Cyclin D1 and the binding of this protein to certain regions of DNA involved in the regulation of DDR.
+Within leukemia, Mantle Cell Lymphoma (MCL) has the worst prognosis due to the fact that the survival average of patients is close to three years. Identified in the 1990s, it is a difficult disease to diagnose and rarely considered cured. The research to find biomarkers to improve its diagnosis is actively pursued all over the world. This tumor is characterized by the overexpression of Cyclin D1 and the binding of this protein to certain regions of DNA involved in the regulation of DDR.
 
 The project presented here aims to analyze the similarity of the gene expression regulated by Cyclin D1 of MCL with respect to gene expression of DDR. This would allow exploring possible essential mechanisms of carcinogenesis and focus on the genes that could be interesting therapeutic targets in the process of tumor progression. In addition, new biomarkers could be used to help in an early diagnosis, often linked to a better survival rate.
 
 The data sets published for MCL (GSE21452 \cite{mclData:2011}) and DDR (GSE25848 \cite{ddrData:2011}) will be used to generate a gene signature in which the significantly enriched genes will be identified in order to study their possible role as a therapeutic target and as a biomarker.
 
-The \textit{R} environment will be used to align the reads, generate quality controls and finally generate the gene signature through Gene Set Enrichment Analysis (GSEA). All this process will be boosted with the addition of machine learning methodologies.
+The \textit{R} environment will be used to align the reads, generate quality controls and finally generate the gene signature through Gene Set Enrichment Analysis (GSEA). 
+As stated in its documentation:
+"Gene Set Enrichment Analysis (GSEA) is a computational method that determines whether an a priori defined set of genes shows statistically significant, concordant differences between two biological states (e.g. phenotypes)."\cite{gsea_user_doc:2012}
+
+
+All this process will be boosted with the addition of Machine Learning methodologies.
+
+\vspace{1.5cm}
