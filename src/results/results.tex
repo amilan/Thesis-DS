@@ -1,3 +1,4 @@
+\onehalfspacing
 % \chapter{Results}
 % \label{chapter:results}
 
@@ -7,12 +8,12 @@ This chapter summarizes the results achieved by the developed pipeline in the sc
 
 \section{Across the Pipeline}
 
-As commented in the Methods chapter \ref{chapter:methods}, the pipeline starts with the cleaning of the two selected data sets.
+As commented in the chapter \ref{chapter:methods}, the pipeline starts with the cleaning of the two selected data sets.
 It was specially important to clean GSE25848 as it contained 32443 out of 48803 genes without any data. Those genes were removed from the data set, resulting in a new one with 16360 genes with an expression value.
 
 The second step was to make a first selection of genes. This selection was done individually per each data set. It consisted in a differentially expressed gene ranking where the top 10000 genes from each data set were selected.
 
-After that process, a normalization and intersection processes took place, giving as a result a new data set composed by common genes. Such data set was containing 1305 genes and 76 samples.
+After that process, a normalization and intersection processes took place, giving as a result a new data set composed by common genes. Such data set contained 1305 genes and 76 samples.
 
 The next step was the computation of the correlation between each gene and CCND1. Once these values were computed, they were used to run an unsupervised clustering method, K-Means. The result of this method can be seen in the figure \ref{fig:cor_cluster}.
 
@@ -68,7 +69,7 @@ There are four key statistics obtained from a gene set enrichment analysis:
 Having this four statistics defined, the procedure to analyse the results is the following. First, the identified gene sets are ranked using the NES value. Then, a cut-off on FDR needs to be applied. The generalized cut-off on FDR is 25\%, which indicates that the result is likely to be valid 3 out of 4 times. The gene sets that passes the FDR cut-off are the most interesting ones to generate hypothesis for further research.
 
 Finally, the nominal p value is consulted. If a gene set has a small nominal p value and a high FDR value, it means that it is not as significant when compared with other gene sets in the empirical null distribution. The reason behind that could be that there are not enough samples, the biological signal is subtle, or the gene sets do not represent the biology in question.
-In case of a high nominal p value and a low FDR value, the result is considered negative, representing that the gene set is not significant and there are also other sets that are weaker.
+In case of a high nominal p value and a low FDR value, the result is considered negative, representing that the gene set is not significant and there are other sets that are weaker.
 There are two cut-off defined for the nominal p value, 1\% and 5\%.
 
 % \subsection{Enrichment Score}
@@ -205,7 +206,7 @@ As shown in the table \ref{enr_ph_positive_h}, using the Hallmark gene sets coll
     \label{detailed_pos_h}
     \end{table}
 
-As seen in the table \ref{detailed_pos_h}, the common genes from MCL and DDR resulted in a up-regulated identification of the following biological states or processes:
+As seen in the table \ref{detailed_pos_h}, the common genes from MCL and DDR resulted in an up-regulated identification of the following biological states or processes:
 
 \begin{itemize}
     \item Early and late response to estrogen.
@@ -251,8 +252,8 @@ In all of them, except in the Hypoxia state, CCND1 was identified as up-regulate
     \label{detailed_pos_c6}
     \end{table}
 
-The previous two tables show an enumeration of the results obtained from running GSEA with the C6 collection.
-In this case, the signatures of cellular pathways were CCND1 is involved are:
+The tables \ref{enr_ph_positive_c6} and \ref{detailed_pos_c6} show an enumeration of the results obtained from running GSEA with the C6 collection.
+In this case, the detected signatures of cellular pathways were CCND1 is involved are:
 
 \begin{itemize}
     \item BMI1\_DN.V1\_UP. Genes up-regulated in DAOY cells (medulloblastoma) upon knockdown of BMI1.
@@ -324,7 +325,7 @@ The execution of GSEA using the C5 collection retrieved the results summarized i
 
 As in the previous sections, the following tables summarize the outcome from running GSEA, this using the C2 collection.
 
-Is interesting to point out the consistency of this results with the achieved with the previous collection as both detected as up-regulated the cell cycle mitotic gene set.
+Is interesting to point out the consistency of these results with the achieved with the previous collection as both detected as up-regulated the cell cycle mitotic gene set.
 
 \begin{table}[h!]
     \centering

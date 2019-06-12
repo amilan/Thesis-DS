@@ -1,3 +1,4 @@
+\onehalfspacing
 % \chapter{Methods}
 % \label{chapter:methods}
 
@@ -6,7 +7,8 @@
 %\subsection{Introduction}
 As described in the project objectives, this study aims to find similarities between the gene expression regulated by Cyclin D1 in MCL and the gene expression of the DDR, using Data Mining and Machine Learning techniques combined with Statistical Tests and biological analysis, to identify the significant enriched genes that can act as therapeutic target and biomarkers.
 
-In order to fulfill these goals, this study has been developed following two different approaches that share a common part on the data cleaning and the final GSEA process, but differ on the data normalization and posterior gene selection processes. The following sections will explain in details the two scenarios, but before going into details, it is worth to mention that two public data sets from Gene Expression Omnibus repository (GEO) were selected for this study. These data sets are:
+In order to fulfill these goals, this study has been developed following two different approaches that share a common part on the data cleaning and the final GSEA process, where the identification of enriched gene sets will be performed.
+Both approaches differ on the data normalization and posterior gene selection processes. The following sections will explain in details the two scenarios, but before going into details, it is worth to mention that two public data sets from Gene Expression Omnibus repository (GEO) were selected for this study. These data sets are:
 
 \begin{itemize}
     \item GSE25848 \cite{ddrData:2011}: which contains data about DDR.
@@ -29,11 +31,11 @@ As seen in the figure, the pipeline is composed by seven steps or sub-processes:
 
 \begin{itemize}
     \item \textbf{Data cleaning:} the data from the two original data sets are cleaned and prepared for the posterior steps.
-    \item \textbf{Differentially expressed gene ranking:} A first ranking of genes is generated. This ranking is done per each individual data set.
+    \item \textbf{Differentially expressed gene ranking:} a first ranking of genes is generated. This ranking is done per each individual data set.
     \item \textbf{Normalization:} process to allow the posterior merge of both data sets.
-    \item \textbf{Intersection:} Common genes from both data sets are discovered and merged into a new data set.
+    \item \textbf{Intersection:} common genes from both data sets are discovered and merged into a new data set.
     \item \textbf{RankProd analysis:} common genes are analyzed in order to find up and down regulated genes.
-    \item \textbf{Feature selection:} machine learning algorithms are applied to find the most important features (genes).
+    \item \textbf{Feature selection:} Machine Learning algorithms are applied to find the most important features (genes).
     \item \textbf{GSEA:} analysis to find significantly enriched genes.
 \end{itemize}
 
@@ -56,9 +58,9 @@ Thanks to this transformation, the data coming from both data sets were in a sim
 
 During this process, a match between the two new reduced data sets was performed, and as a result, a new data set containing only the matched genes was created. This new data set was the one used for the posterior analysis, but before passing to the next step, another data cleaning process was performed.
 
-In this case, some empty values (\textit{NA}) values were generated after the log2 transformation, and they needed to be treated.
+In this case, some empty values (\textit{NA}) were generated after the log2 transformation, and they needed to be treated.
 Two different treatments were applied. First, the Cyclin D1 gene (CCND1) was identified as one containing a few \textit{NA} values. As this is the main gene for our study, the missing values were imputed using the mean of the \textit{non NA} values for that gene.
-As a second treatment, the genes containing NA values were discarded.
+As a second treatment, the genes containing \textit{NA} values were discarded.
 
 Apart from those treatments, the name of the genes were reviewed in order to ensure that they were valid for the upcoming steps.
 
@@ -74,7 +76,7 @@ As a consequence, a list of features sorted by importance was generated. From th
 
 \subsection{GSEA}
 As a final step, two different ways of executing a GSEA were carried out.
-First, the Bioconductor package FGSEA\cite{fgsea} was used, but the results of this process were not satisfactory.
+First, the Bioconductor package FGSEA\cite{fgsea} was used, but the outcome of this process was not satisfactory due to the lack of valid results obtained.
 After that first attempt, the original GSEA method\cite{Subramanian15545} was performed, but again, with unsatisfactory results, where no significantly enriched genes were obtained.
 
 This negative results forced the re-design of the experiment, and the second scenario was designed.
@@ -108,13 +110,13 @@ The normalization applied in this case was a z-scored normalization.
 The intersection of the two data sets was carried out in a similar way than the one executed in the scenario 1.
 As a result, a new data set with the common genes is obtained.
 
-The difference between this one and the one generated in the first scenario is that in this one, the data has suffered a different normalization, and therefore, the \textit{NA} values that were generated in the log2 transformation are not present, which means that fewer data had to be removed.
+The difference between this one and the one generated in the first scenario is that in this one, the data has suffered a different normalization, and therefore, the \textit{NA} values that were generated in the log2 transformation are not present, which means that fewer data had to be removed and no data needed to be imputed.
 
 \subsection{Correlation with Cyclin D1}
 Continuing with this second pipeline, the next step was the calculation of the correlation between the expression of the available genes and the expression of Cyclin D1.
 
 Once this correlation was calculated, a K-Means algorithm was applied.
-The purpose of running this method was to create 3 clusters and classify the data into three different types of correlation: positive correlation, no significant correlation and negative correlation.
+The purpose of running this method was to create three clusters and classify the data into three different types of correlation: positive correlation, no significant correlation and negative correlation.
 
 At the end of this correlation process, two new columns were added to the data set, the first one containing the correlation value of each gene and the second one with the cluster where each gene belongs.
 
@@ -125,9 +127,9 @@ As a result, a 316 genes were selected for the next step.
 \subsection{Feature Selection}
 Similar to the Feature Selection process in the previous pipeline, a Random Forest algorithm was executed.
 This time, the method was executed in an unsupervised and supervised way, giving as a result a list of features (genes) ranked by importance.
-From the ranked list of genes obtained from the unsupervised random forest, 205 genes were selected to be passed to the final GSEA process.
-From the ranked list of genes obtained from the supervised random forest, 100 genes were selected to be passed to the final GSEA process.
-Both numbers were chosen to ensure that the Cyclin D1 (CCND1) was contained in the selection.
+From the ranked list of genes obtained from the Unsupervised Random Forest, 205 genes were selected to be passed to the final GSEA process.
+From the ranked list of genes obtained from the Supervised Random Forest, 100 genes were selected to be passed to the final GSEA process.
+Both numbers were chosen to ensure that the Cyclin D1 (CCND1) was present in the selection.
 
 \subsection{GSEA}
 

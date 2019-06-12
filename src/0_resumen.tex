@@ -36,7 +36,7 @@ This work is licensed under a Creative Commons Attribution - NonCommercial - NoD
 	\renewcommand{\arraystretch}{2}
 	\begin{tabular}{r | p{8cm}}
 		\hline
-		Title: & Study of the transcriptional function \newline of Cyclin D1 in Leukemia\\
+		Title: & Study of the transcriptional function \newline of Cyclin D1 in leukemia\\
 		\hline
         Author: & Antonio Milán Otero\\
 		\hline
@@ -52,7 +52,7 @@ This work is licensed under a Creative Commons Attribution - NonCommercial - NoD
 		\hline
         Language: & English\\
 		\hline
-        Keywords & Leukemia, Mantle-Cell-Lymphoma, Cyclin-D1, DNA-damage-Repair, Machine-Learning\\
+        Keywords & Leukemia, Cyclin-D1, Machine-Learning\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -60,16 +60,20 @@ This work is licensed under a Creative Commons Attribution - NonCommercial - NoD
 %%%%%%%%%%%%%%%%%%%
 %%% DEDICATORIA %%%
 %%%%%%%%%%%%%%%%%%%
-\chapter*{Dedication/Quote}
+\chapter*{Dedication}
 
-To be completed.
+This thesis and the conclusion of the MSc in Data Science that it represents is dedicated to my wife Cristina. Without her support and love it would be impossible to accomplish any of this. Thanks for all the support during the long weekends that we had to spend at home because I had work to finish, you never complained, and even better, you always had a smile and a word of encouragement to cheer me up and help me to continue at difficult times.
 
 %%%%%%%%%%%%%%%%%%%
 %%% Agradecimientos %%%
 %%%%%%%%%%%%%%%%%%%
 \chapter*{Acknowledgment}
 
-To be completed.
+I would like to thank my advisor, Carles Barceló for all the guidance, support and patience offered during the execution of this project.
+
+In addition, I would like to thank Jordi Casas Roma and all the professors involved in the MSc in Data Science for all the teachings provided along this MSc degree.
+
+Finally, thanks to Universitat Oberta de Catalunya for providing the necessary resources to make the MSc in Data Science a reality.
 
 %%%%%%%%%%%%%%%%
 %%% RESUMEN  %%%
@@ -99,12 +103,52 @@ With the addition of Machine Learning algorithms to the biology analysis pipelin
 
 %% Results
 %% What's the answer?
-%% To be filled lated.
+The result of such a pipeline is the accurate selection of genes correlated with Cyclin D1, involved in MCL and DDR, and its posterior analysis and identification of significantly enriched gene sets.
 
 %% Conclusions
 %% What are the implications of your answer?
-%% To be filled later
+As a conclusion, the results obtained in this study suggested that targeting of Notch pathway and studying potential common mechanisms of hypoxia and apoptosis resistance would be of great interest for possible future studies on treatments of MCL.
 
 \vspace{1.5cm}
 
-\textbf{Keywords}: Leukemia, Mantle-Cell-Lymphoma, Cyclin-D1, DNA-damage-Repair, Machine-Learning.
+\textbf{Keywords}: Leukemia, Cyclin-D1, Machine-Learning.
+
+\newpage
+%%%%%%%%%%%%%%%%
+%%% RESUMEN  %%%
+%%%%%%%%%%%%%%%%
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+
+\onehalfspacing
+
+%%Motivation
+%% Why?
+La leucemia es un tipo de cáncer que empieza en los tejidos generadores de sangre, tales como la médula ósea. Esta enfermedad causa la producción de un gran número de células sanguíneas anormales que van a parar al flujo sanguíneo.
+\footnote{https://www.cancer.gov/publications/dictionaries/cancer-terms/def/leukemia}
+
+Dentro de la leucemia encontramos diferentes tipos, siendo el Linfoma de las células del manto (en adelante, Mantle Cell Lymphoma o MCL) el que peor pronóstico tiene, debido a la corta media de supervivencia del paciente, cercana a los tres años.
+Este tumor se caracteriza por la sobre-expresión de la Cyclina D1, proteína que ayuda a controlar la división celular, y también por la unión de ésta proteína a ciertas regiones de ADN involucradas en la regulación del proceso de reparación del daño al ADN (en adelante, DNA-Damage Response o DDR).
+
+%% Problem statement
+%% What problem do we try to solve? 
+%% Add the explanation of DDR!!!!
+
+El presente estudio tiene como objetivo identificar las similitudes entre la expresión génica derivada de la regulación por la Cyclina D1 en Linfoma con la que se da en el caso del daño en el ADN. Este conocimiento permitirá la exploración de los mecanismos esenciales de carcinogénesis y ayudará en la identificación de genes que pueden ser un objetivo terapéutico interesante en el proceso de progresión tumoral. Adicionalmente, se podrían hallar nuevos biomarcadores para el diagnóstico precoz de la enfermedad.
+
+%% Approach
+%% How did you go about solving or making progress on the problem?
+Con la adición de Machine Learning al proceso de análisis biológico, este proyecto explora nuevas formas de mejorar las metodologías tradicionales e impulsar la identificación de genes significativamente enriquecidos que servirán a los propósitos mencionados anteriormente.
+
+%% Results
+%% What's the answer?
+El resultado de dicho proceso analítico es la precisa selección de genes correlacionados con la Cyclina D1, involucrados en MCL y DDR, y su posterior análisis.
+
+%% Conclusions
+%% What are the implications of your answer?
+Como conclusión, los resultados obtenidos en este estudio sugirieron que el tratamiento del \textit{Notch pathway} y el potencial estudio de los mecanismos comunes de resistencia a la hipoxia y apoptosis serían de gran interés para posibles estudios futuros sobre tratamientos de MCL.
+
+\vspace{1.5cm}
+
+\textbf{Keywords}: Leucemia, Cyclin-D1, Machine-Learning.
+
